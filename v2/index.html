@@ -1,0 +1,552 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body>
+<title>Choosing a Design Laptop</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+:root{
+  --ink:#16191F; --ground:#EEEFF1; --surface:#FBFBFC; --surface-2:#E3E5EA;
+  --accent:#C25710; --accent-soft:#F4E3D5; --cool:#3D5A8A; --muted:#626977;
+  --line:#D2D5DC; --shadow:0 1px 2px rgba(22,25,31,.07),0 8px 24px -16px rgba(22,25,31,.28);
+  --ok:#2F6B3C; --hero:#14171D; --hero-fg:#F1F2F4; --hero-muted:#AEB4C0;
+  --footer-bg:#16191F; --footer-fg:#E5E7EB; --ref:#9AA1AE;
+  --display:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#E8EAEE; --ground:#0F1115; --surface:#181B21; --surface-2:#22262E;
+    --accent:#F0873B; --accent-soft:#3A2418; --cool:#8AA8DA; --muted:#9AA1AE;
+    --line:#2C313B; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px -18px rgba(0,0,0,.8);
+    --ok:#7FBE8B; --hero:#0A0C0F; --hero-fg:#F1F2F4; --hero-muted:#AEB4C0;
+    --footer-bg:#22262E; --footer-fg:#E8EAEE; --ref:#5B616C;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E8EAEE; --ground:#0F1115; --surface:#181B21; --surface-2:#22262E;
+  --accent:#F0873B; --accent-soft:#3A2418; --cool:#8AA8DA; --muted:#9AA1AE;
+  --line:#2C313B; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px -18px rgba(0,0,0,.8);
+  --ok:#7FBE8B; --hero:#0A0C0F; --hero-fg:#F1F2F4; --hero-muted:#AEB4C0;
+  --footer-bg:#22262E; --footer-fg:#E8EAEE; --ref:#5B616C;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--body);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+p{margin:0}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1120px;margin:0 auto;
+  padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+@media(max-width:560px){.wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
+.eyebrow{font-family:var(--mono);font-size:.7rem;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted)}
+
+#theme{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);right:max(12px,env(safe-area-inset-right,0px));
+  z-index:50;display:inline-flex;align-items:center;gap:7px;padding:8px 12px;
+  font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;cursor:pointer;border-radius:999px;
+  background:var(--surface);color:var(--ink);border:1px solid var(--line);box-shadow:var(--shadow)}
+#theme svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round}
+
+.hero{background:var(--hero);color:var(--hero-fg);overflow:hidden}
+.hero-inner{padding-block:64px 44px;display:grid;gap:34px}
+.hero .eyebrow{color:var(--hero-muted)}
+.hero h1{font-size:clamp(2.5rem,7.5vw,4.6rem);font-weight:800;letter-spacing:-.03em;color:#fff;margin:.2em 0 .15em}
+.hero h1 em{font-style:normal;color:#F0873B}
+.hero-sub{font-size:clamp(1.05rem,2.4vw,1.25rem);color:#D6DAE1;max-width:52ch}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px 28px;font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;color:var(--hero-muted)}
+.hero-meta b{color:#fff;font-weight:600}
+.profile{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;margin:0}
+.profile svg{width:100%;height:auto;display:block;max-width:900px}
+.profile-labels{display:grid;grid-template-columns:repeat(3,27.4%);column-gap:3.97%;padding-left:4.9%;margin-top:8px;max-width:900px;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--hero-muted)}
+.profile-labels b{display:block;color:#fff;font-weight:600}
+.profile-labels i{font-style:normal;display:inline-block;width:9px;height:9px;margin-right:6px;vertical-align:0}
+@media(max-width:560px){.profile-labels{font-size:.58rem;letter-spacing:.02em;padding-left:2%;column-gap:2%;grid-template-columns:repeat(3,1fr)}}
+.profile figcaption{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--hero-muted);margin-top:12px;max-width:80ch}
+
+section{padding-block:60px}
+section + section{border-top:1px solid var(--line)}
+.sec-head{margin-bottom:26px}
+.sec-head h2{font-size:clamp(1.55rem,3.6vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin-top:.3em}
+.sec-head p{color:var(--muted);margin-top:.7em;max-width:64ch}
+
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);
+  padding:22px 24px;border-radius:0 3px 3px 0;display:grid;gap:10px;max-width:780px}
+.verdict h3{font-size:1.3rem;font-weight:800}
+.verdict p{color:var(--muted)}
+.verdict p strong{color:var(--ink)}
+
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);
+  border:1px solid var(--line);border-radius:3px;overflow:hidden}
+@media(max-width:820px){.strip{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.strip{grid-template-columns:1fr}}
+.cell{background:var(--surface);padding:16px 16px 18px;display:grid;gap:8px;align-content:start}
+.cell .q{font-family:var(--display);font-weight:600;font-size:1rem}
+.cell .row{display:grid;grid-template-columns:72px 1fr;gap:10px;align-items:center;font-size:.9rem}
+.cell .who{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cell .v{font-family:var(--mono);font-size:.82rem}
+.cell .v.win{color:var(--accent);font-weight:600}
+.cell .v.win::after{content:" ●";font-size:.7em}
+
+.picks{display:grid;grid-template-columns:repeat(3,1fr);column-gap:16px;row-gap:0}
+.pick{background:var(--surface);border:1px solid var(--line);border-radius:3px;overflow:hidden;min-width:0;
+  display:grid;grid-row:span 6;grid-template-rows:subgrid;row-gap:0}
+.pick > *{padding-left:20px;padding-right:20px;min-width:0}
+.pick > p{padding-top:18px;font-size:.96rem}
+.pick > .facts{padding-top:16px}
+.pick > .pn{padding-top:16px}
+.pick > .choose{margin:16px 20px 0;align-self:start}
+.pick > .go{padding-top:18px;padding-bottom:22px;align-self:end}
+@media(max-width:980px){
+  .picks{grid-template-columns:1fr;row-gap:18px;max-width:640px}
+  .pick{display:flex;flex-direction:column}
+}
+.pick.lead{border-color:var(--accent);box-shadow:var(--shadow)}
+.pick-top{padding-top:20px;padding-bottom:16px;border-bottom:1px solid var(--line);display:grid;gap:6px;align-content:start}
+.pick.lead .pick-top{box-shadow:inset 0 3px 0 var(--accent)}
+.tag{justify-self:start;font-family:var(--mono);font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 8px;border-radius:2px;border:1px solid currentColor;color:var(--cool)}
+.pick.lead .tag{color:var(--accent)}
+.pick h3{font-size:1.35rem;font-weight:800;letter-spacing:-.015em}
+.pick .nick{color:var(--muted);font-size:.93rem}
+.pick .seller{font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;color:var(--muted)}
+.price{font-family:var(--mono);font-size:1.55rem;font-weight:600;font-variant-numeric:tabular-nums;margin-top:4px}
+.price small{display:block;margin-top:4px;font-size:.7rem;font-weight:400;color:var(--muted);letter-spacing:.03em}
+.facts{display:grid;grid-template-columns:84px 1fr;gap:6px 12px;margin:0;font-size:.88rem}
+.facts dt{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.facts dd{margin:0}
+.pn{display:grid;grid-template-columns:1fr;gap:12px}
+@media(max-width:980px) and (min-width:481px){.pn{grid-template-columns:1fr 1fr}}
+.pn h4{font-family:var(--mono);font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.pn ul{margin:0;padding-left:18px;font-size:.9rem;display:grid;gap:4px}
+.pn .plus li::marker{color:var(--ok)}
+.pn .minus li::marker{color:var(--accent)}
+.choose{background:var(--surface-2);padding:12px 14px;border-radius:3px;font-size:.92rem}
+.choose b{font-family:var(--display)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--surface);text-decoration:none;
+  padding:10px 16px;font-family:var(--display);font-weight:600;font-size:.95rem;border-radius:2px}
+.btn::after{content:"\2197"}
+.btn:hover{background:var(--accent);color:#fff}
+.btn.quiet{background:transparent;color:var(--ink);border:1px solid var(--line);padding:7px 12px;font-size:.85rem}
+.btn.quiet:hover{border-color:var(--accent);color:var(--accent);background:transparent}
+
+.refs-head{margin-top:44px;margin-bottom:14px;display:grid;gap:4px}
+.refs-head h3{font-size:1.1rem;font-weight:600;color:var(--muted)}
+.refs-head p{font-size:.92rem;color:var(--muted);max-width:64ch}
+.refs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:860px}
+@media(max-width:680px){.refs{grid-template-columns:1fr}}
+.ref{border:1px dashed var(--line);border-radius:3px;padding:16px 18px;display:grid;gap:8px;align-content:start;background:transparent}
+.ref h4{font-size:1rem;font-weight:600}
+.ref .status{justify-self:start;font-family:var(--mono);font-size:.64rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);background:var(--surface-2);padding:3px 8px;border-radius:2px}
+.ref dl{display:grid;grid-template-columns:84px 1fr;gap:4px 12px;margin:0;font-size:.86rem;color:var(--muted)}
+.ref dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;padding-top:3px}
+.ref dd{margin:0}
+.ref p{font-size:.9rem}
+.ref .go{margin-top:2px}
+
+.terms{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.term{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:18px 18px 20px;display:grid;gap:6px;align-content:start}
+.term h3{font-size:1.08rem;font-weight:600}
+.term .aka{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cool)}
+.term p{font-size:.94rem;color:var(--muted)}
+.term p strong{color:var(--ink);font-weight:600}
+
+.duo{display:grid;gap:26px;align-items:start}
+@media(min-width:900px){.duo{grid-template-columns:1fr 1fr}}
+.scale{display:grid;gap:14px}
+.bag{display:grid;gap:6px}
+.bag .lbl{display:flex;justify-content:space-between;gap:10px;font-size:.92rem}
+.bag .lbl span{font-family:var(--mono);font-size:.82rem}
+.bag.ghost .lbl{color:var(--muted)}
+.bar{height:22px;background:var(--surface-2);border-radius:2px;position:relative;overflow:hidden}
+.bar i{position:absolute;inset:0 auto 0 0;background:var(--cool)}
+.bar i.a{background:var(--accent)}
+.bar i.r{background:var(--ref)}
+.bar i.c{background:#C9A85E}
+.bar .limit{position:absolute;top:0;bottom:0;left:66.67%;border-left:2px dashed var(--ink);opacity:.55}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--mono);font-size:.68rem;letter-spacing:.05em;color:var(--muted)}
+.legend .lim::before{content:"";display:inline-block;width:0;height:10px;margin-right:6px;vertical-align:-1px;border-left:2px dashed var(--ink);opacity:.6}
+.note{border-left:3px solid var(--cool);background:var(--surface);padding:15px 18px;border-radius:0 3px 3px 0;font-size:.95rem}
+.note.warn{border-left-color:var(--accent)}
+.note .lbl{font-family:var(--mono);font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:5px}
+.note p + p{margin-top:.6em}
+
+.tw{border:1px solid var(--line);border-radius:3px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;table-layout:fixed;font-size:.88rem}
+th,td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+thead th{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--surface-2)}
+tbody tr:last-child td{border-bottom:0}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+td:first-child,th:first-child{width:24%}
+td:first-child{font-family:var(--display);font-weight:600}
+@media(max-width:480px){table{font-size:.76rem} th,td{padding:8px 6px} thead th{font-size:.56rem;letter-spacing:.04em}}
+
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.checks > li{display:grid;grid-template-columns:28px 1fr;gap:10px}
+.checks .n{font-family:var(--mono);font-size:.8rem;font-weight:600;color:var(--accent);padding-top:2px}
+.checks p{color:var(--muted);font-size:.92rem;margin-top:2px}
+.checks li.key{border:2px solid var(--accent);background:var(--accent-soft);border-radius:4px;padding:14px 16px 14px 12px}
+.checks li.key b{color:var(--accent);font-family:var(--display);font-size:1.12rem}
+.checks li.key p{color:var(--ink)}
+.spec-list{margin:8px 0;padding-left:18px;font-size:.92rem;color:var(--muted);display:grid;gap:5px}
+.spec-list strong{color:var(--ink)}
+.checks li > div > p + p{margin-top:6px}
+.ask{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:18px 20px;display:grid;gap:10px}
+.ask blockquote{margin:0;padding:12px 14px;background:var(--surface-2);border-radius:2px;font-style:italic}
+
+.grades{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:860px){.grades{grid-template-columns:1fr}}
+.grade{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:6px}
+.grade .gsum{font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cool)}
+.grade .gname{font-family:var(--display);font-weight:800;font-size:1.2rem}
+.grade p{font-size:.93rem;color:var(--muted)}
+.grade p q{color:var(--ink)}
+.grade .gfor{font-family:var(--mono);font-size:.68rem;letter-spacing:.04em;color:var(--ink);border-top:1px solid var(--line);padding-top:8px;margin-top:auto}
+.grade .gfor a{color:inherit}
+
+footer{background:var(--footer-bg);color:var(--footer-fg);padding-block:44px 52px}
+footer .eyebrow{color:inherit;opacity:.65}
+footer p{font-size:.88rem;opacity:.8;max-width:72ch;margin-top:10px}
+footer a{color:inherit}
+@media (prefers-reduced-motion:no-preference){
+  .pick,.term{transition:transform .18s ease,box-shadow .18s ease}
+  .pick:hover,.term:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+}
+</style>
+
+<button id="theme" type="button" aria-label="Switch between light and dark">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8Z"/></svg>
+  <span id="theme-lbl">Theme</span>
+</button>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow">Industrial Design · Loughborough · Laptop guide</div>
+      <h1>Three laptops, <em>one choice</em></h1>
+      <p class="hero-sub">A plain-English guide to a light laptop that can still handle SolidWorks and rendering. All three are refurbished workstations with pro graphics cards, and all three weigh under 2 kg.</p>
+    </div>
+    <div class="hero-meta">
+      <span>Prices <b>£823 – £1,299</b></span>
+      <span>Weight <b>under 2 kg on all three</b></span>
+      <span>Checked <b>1 Nov 2026</b></span>
+    </div>
+    <figure class="profile">
+      <svg viewBox="0 0 860 246" role="img" aria-label="Side view of the three laptops with lids open, drawn to the same scale, with the heavier ThinkPad P15 Gen 2 outlined faintly behind each one. All three are much thinner than the P15."><path d="M42.5 232.0 L229.2 232.0 L229.2 214.6 L42.5 219.8 Z" fill="none" stroke="#AEB4C0" stroke-opacity=".55" stroke-width="1.2" stroke-dasharray="4 3"/><path d="M228.1 214.6 L272.3 42.1 L278.0 43.5 L233.8 216.0 Z" fill="none" stroke="#AEB4C0" stroke-opacity=".55" stroke-width="1.2" stroke-dasharray="4 3"/><path d="M215.3 223.2 L256.0 63.4 L260.3 64.4 L219.6 224.3 Z" fill="#F0873B" stroke="#F0873B" stroke-width="1.5" stroke-linejoin="round"/><path d="M216.1 218.6 L253.8 67.4" stroke="#fff" stroke-opacity=".7" stroke-width="1.3" stroke-linecap="round"/><path d="M42.5 232.0 L216.1 232.0 L216.1 223.2 L42.5 223.2 Z" fill="#F0873B" stroke="#F0873B" stroke-width="1.5" stroke-linejoin="round"/><rect x="51.4" y="232.5" width="13.3" height="1.8" rx=".8" fill="#5B606B"/><rect x="193.9" y="232.5" width="13.3" height="1.8" rx=".8" fill="#5B606B"/><path d="M312.2 232.0 L498.9 232.0 L498.9 214.6 L312.2 219.8 Z" fill="none" stroke="#AEB4C0" stroke-opacity=".55" stroke-width="1.2" stroke-dasharray="4 3"/><path d="M497.7 214.6 L541.9 42.1 L547.6 43.5 L503.4 216.0 Z" fill="none" stroke="#AEB4C0" stroke-opacity=".55" stroke-width="1.2" stroke-dasharray="4 3"/><path d="M484.9 223.2 L525.6 63.4 L529.9 64.4 L489.2 224.3 Z" fill="#8AA8DA" stroke="#8AA8DA" stroke-width="1.5" stroke-linejoin="round"/><path d="M485.8 218.6 L523.5 67.4" stroke="#fff" stroke-opacity=".7" stroke-width="1.3" stroke-linecap="round"/><path d="M312.2 232.0 L485.8 232.0 L485.8 223.2 L312.2 223.2 Z" fill="#8AA8DA" stroke="#8AA8DA" stroke-width="1.5" stroke-linejoin="round"/><rect x="321.1" y="232.5" width="13.3" height="1.8" rx=".8" fill="#5B606B"/><rect x="463.6" y="232.5" width="13.3" height="1.8" rx=".8" fill="#5B606B"/><path d="M581.8 232.0 L768.5 232.0 L768.5 214.6 L581.8 219.8 Z" fill="none" stroke="#AEB4C0" stroke-opacity=".55" stroke-width="1.2" stroke-dasharray="4 3"/><path d="M767.3 214.6 L811.5 42.1 L817.3 43.5 L773.1 216.0 Z" fill="none" stroke="#AEB4C0" stroke-opacity=".55" stroke-width="1.2" stroke-dasharray="4 3"/><path d="M768.7 223.5 L812.9 49.9 L817.2 50.9 L773.1 224.6 Z" fill="#E6D3A3" stroke="#E6D3A3" stroke-width="1.5" stroke-linejoin="round"/><path d="M769.6 218.9 L810.8 53.9" stroke="#fff" stroke-opacity=".7" stroke-width="1.3" stroke-linecap="round"/><path d="M581.8 232.0 L769.6 232.0 L769.6 223.5 L581.8 223.5 Z" fill="#E6D3A3" stroke="#E6D3A3" stroke-width="1.5" stroke-linejoin="round"/><rect x="590.7" y="232.5" width="13.3" height="1.8" rx=".8" fill="#5B606B"/><rect x="747.4" y="232.5" width="13.3" height="1.8" rx=".8" fill="#5B606B"/></svg>
+      <div class="profile-labels">
+        <div><b><i style="background:#F0873B"></i>A · ZBook Studio G8</b>1.8 cm closed · 1.79 kg</div>
+        <div><b><i style="background:#8AA8DA"></i>B · ZBook Studio G8</b>1.8 cm closed · 1.79 kg</div>
+        <div><b><i style="background:#E6D3A3"></i>C · ThinkPad P1 Gen 6</b>1.75 cm closed · about 1.86 kg</div>
+      </div>
+      <figcaption>Side view with the lids open, drawn to the same scale from the makers' spec sheets. The dashed outline behind each one is the ThinkPad P15 Gen 2 from the first guide: 2.5 to 3.1 cm thick and 2.87 kg. A and B are the same model from two different sellers.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">The short version</div>
+        <h2>Option A gives you the most rendering power for the money.</h2>
+      </div>
+      <div class="verdict">
+        <h3>Our pick: Option A, the HP ZBook Studio G8 from CeX</h3>
+        <p>It has the <strong>same graphics card as the heavy ThinkPad P15 Gen 2</strong> from the first guide, so renders for boards, crits and your portfolio come out quickly. But it's <strong>about 1.1 kg lighter</strong>, and CeX gives a <strong>5-year warranty</strong>. The one thing to check is the keyboard: CeX doesn't say whether it's a UK layout (see the checklist).</p>
+        <p><strong>Choose Option C</strong> if the budget can stretch to £1,299. It's the newest of the three, has the best screen and is covered by Lenovo until October 2028.</p>
+        <p><strong>Choose Option B</strong> if you want everything confirmed up front: a UK keyboard, free delivery and returns until 31 January. Renders will be slower than on A or C.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">At a glance</div>
+        <h2>Who wins what</h2>
+        <p>The orange dot marks the best laptop for each point. Where two are about the same, both get a dot.</p>
+      </div>
+      <div class="strip">
+        <div class="cell"><div class="q">Making renders</div>
+          <div class="row"><span class="who">A</span><span class="v win">Fast</span></div>
+          <div class="row"><span class="who">B</span><span class="v">Slower</span></div>
+          <div class="row"><span class="who">C</span><span class="v win">Fast</span></div></div>
+        <div class="cell"><div class="q">Price</div>
+          <div class="row"><span class="who">A</span><span class="v win">£822.95</span></div>
+          <div class="row"><span class="who">B</span><span class="v">£1,045</span></div>
+          <div class="row"><span class="who">C</span><span class="v">£1,299</span></div></div>
+        <div class="cell"><div class="q">Warranty</div>
+          <div class="row"><span class="who">A</span><span class="v win">5 years (CeX)</span></div>
+          <div class="row"><span class="who">B</span><span class="v">1 year</span></div>
+          <div class="row"><span class="who">C</span><span class="v">To Oct 2028 (Lenovo)</span></div></div>
+        <div class="cell"><div class="q">UK keyboard</div>
+          <div class="row"><span class="who">A</span><span class="v">Not stated</span></div>
+          <div class="row"><span class="who">B</span><span class="v win">Confirmed</span></div>
+          <div class="row"><span class="who">C</span><span class="v win">Confirmed</span></div></div>
+        <div class="cell"><div class="q">Screen</div>
+          <div class="row"><span class="who">A</span><span class="v">15.6"</span></div>
+          <div class="row"><span class="who">B</span><span class="v">15.6" Full HD</span></div>
+          <div class="row"><span class="who">C</span><span class="v win">16", sharper, smoother</span></div></div>
+        <div class="cell"><div class="q">Storage</div>
+          <div class="row"><span class="who">A</span><span class="v">1TB</span></div>
+          <div class="row"><span class="who">B</span><span class="v win">2TB</span></div>
+          <div class="row"><span class="who">C</span><span class="v win">2TB</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">The three laptops</div>
+        <h2>Side by side</h2>
+        <p>Specs are as listed by each seller on 1 November 2026. Refurbished stock is often a single laptop, so check the listing yourself before you buy.</p>
+      </div>
+      <div class="picks">
+        <article class="pick lead">
+          <div class="pick-top">
+            <span class="tag">Best value</span>
+            <h3>A · HP ZBook Studio G8</h3>
+            <div class="nick">with RTX A3000 graphics</div>
+            <div class="seller">Sold by CeX</div>
+            <div class="price">£822.95 <small>As listed on 1 Nov 2026, incl. £2.95 delivery · 32GB · 1TB · Grade B</small></div>
+          </div>
+          <p>A slim, aluminium HP workstation with a strong pro graphics card, the same one as in the heavy P15 Gen 2. Renders come out quickly and big models stay smooth. CeX's photo is a stock image, so you won't know the exact condition or keyboard until you see it.</p>
+          <dl class="facts">
+            <dt>Weight</dt><dd>1.79 kg (HP spec)</dd>
+            <dt>Thickness</dt><dd>1.8 cm</dd>
+            <dt>Screen</dt><dd>15.6"; CeX doesn't list the resolution</dd>
+            <dt>Storage</dt><dd>1TB, plenty for a degree's worth of projects</dd>
+            <dt>Warranty</dt><dd>5 years from CeX</dd>
+          </dl>
+          <div class="pn">
+            <div><h4>Positives</h4><ul class="plus"><li>Fast renders for the price</li><li>5-year warranty</li><li>Cheapest of the three</li><li>Light and thin</li></ul></div>
+            <div><h4>Negatives</h4><ul class="minus"><li>Keyboard layout not stated: it could be US</li><li>Grade B, so expect some marks</li><li>14 days to return for a refund</li></ul></div>
+          </div>
+          <div class="choose"><b>Choose this if</b> you want the most rendering power for your money and are happy to check the keyboard when it arrives.</div>
+          <div class="go"><a class="btn" href="https://uk.webuy.com/product-detail?id=SLAPHPZBOOKSG878B" target="_blank" rel="noopener">View listing on CeX</a></div>
+        </article>
+
+        <article class="pick">
+          <div class="pick-top">
+            <span class="tag">Safest buy</span>
+            <h3>B · HP ZBook Studio G8</h3>
+            <div class="nick">with RTX A2000 graphics</div>
+            <div class="seller">Amazon Renewed · sold by Cybist</div>
+            <div class="price">£1,045 <small>As listed on 1 Nov 2026, free delivery · 32GB · 2TB · Good</small></div>
+          </div>
+          <p>The same slim HP laptop as Option A, but with a smaller graphics card and double the storage. Everything you'd want to check is stated on the listing, and Amazon makes returns easy. Renders will take noticeably longer than on A or C.</p>
+          <dl class="facts">
+            <dt>Weight</dt><dd>1.79 kg (stated)</dd>
+            <dt>Thickness</dt><dd>1.8 cm</dd>
+            <dt>Screen</dt><dd>15.6" Full HD</dd>
+            <dt>Storage</dt><dd>2TB, more than you'll need</dd>
+            <dt>Warranty</dt><dd>1 year (Amazon Renewed Guarantee)</dd>
+          </dl>
+          <div class="pn">
+            <div><h4>Positives</h4><ul class="plus"><li>UK keyboard confirmed</li><li>Returns until 31 January 2027</li><li>Lots of storage</li><li>Free delivery</li></ul></div>
+            <div><h4>Negatives</h4><ul class="minus"><li>Slower renders than A or C</li><li>£222 more than A</li><li>Shortest warranty</li></ul></div>
+          </div>
+          <div class="choose"><b>Choose this if</b> you'd rather pay more to have the keyboard, condition and returns all confirmed before you buy.</div>
+          <div class="go"><a class="btn" href="https://www.amazon.co.uk/dp/B0FSDWMKJF" target="_blank" rel="noopener">View listing on Amazon</a></div>
+        </article>
+
+        <article class="pick">
+          <div class="pick-top">
+            <span class="tag">Newest and nicest</span>
+            <h3>C · ThinkPad P1 Gen 6</h3>
+            <div class="nick">with RTX 2000 Ada graphics</div>
+            <div class="seller">eBay · business seller Pandota</div>
+            <div class="price">£1,299 <small>As listed on 1 Nov 2026, free delivery · 16GB · 2TB · Opened, never used</small></div>
+          </div>
+          <p>The newest laptop here, a 2023 ThinkPad with a newer graphics card that renders about as fast as Option A's and has more memory for big scenes. It has the best screen of the three and looks barely used. It's about £100 over the budget.</p>
+          <dl class="facts">
+            <dt>Weight</dt><dd>About 1.86 kg (Lenovo spec)</dd>
+            <dt>Thickness</dt><dd>1.75 cm</dd>
+            <dt>Screen</dt><dd>16", sharper (2560 × 1600) and smoother (165Hz)</dd>
+            <dt>Storage</dt><dd>2TB, more than you'll need</dd>
+            <dt>Warranty</dt><dd>Lenovo Premier Support until October 2028</dd>
+          </dl>
+          <div class="pn">
+            <div><h4>Positives</h4><ul class="plus"><li>Newest model, fast renders</li><li>Best screen</li><li>Lenovo warranty to October 2028</li><li>UK keyboard, free 30-day returns</li></ul></div>
+            <div><h4>Negatives</h4><ul class="minus"><li>About £100 over budget</li><li>16GB memory: fine to start, and it can be upgraded later</li><li>Needs a 16" laptop bag</li></ul></div>
+          </div>
+          <div class="choose"><b>Choose this if</b> the budget can stretch and you want a laptop that will feel new for the whole degree.</div>
+          <div class="go"><a class="btn" href="https://www.ebay.co.uk/itm/267821932696" target="_blank" rel="noopener">View listing on eBay</a></div>
+        </article>
+      </div>
+
+      <div class="refs-head">
+        <div class="eyebrow">For comparison</div>
+        <h3>The two ThinkPads from the first guide</h3>
+        <p>These aren't recommendations. They're here so you can see how the new options compare. Both have since sold out.</p>
+      </div>
+      <div class="refs">
+        <div class="ref">
+          <h4>ThinkPad P15 Gen 2 · pcrenewed</h4>
+          <span class="status">Out of stock when checked on 1 Nov 2026</span>
+          <dl><dt>Price</dt><dd>£799.99 (unchanged)</dd><dt>Weight</dt><dd>2.87 kg</dd><dt>Graphics</dt><dd>RTX A3000</dd></dl>
+          <p>The same graphics card as Option A, but about 1.1 kg heavier and much thicker.</p>
+          <div class="go"><a class="btn quiet" href="https://www.pcrenewed.co.uk/product/lenovo-thinkpad-p15-gen-2-core-i7-11850h-nvidia-rtx-a3000-32gb-ram-1tb-ssd-windows-11-pro-15-6-1080p-gaming-laptop/" target="_blank" rel="noopener">View listing</a></div>
+        </div>
+        <div class="ref">
+          <h4>ThinkPad P15v Gen 3 · pcrenewed</h4>
+          <span class="status">Out of stock when checked on 1 Nov 2026</span>
+          <dl><dt>Price</dt><dd>£624.99 with 32GB and 512GB (unchanged)</dd><dt>Weight</dt><dd>About 2.2 kg</dd><dt>Graphics</dt><dd>Quadro T1200</dd></dl>
+          <p>About £200 cheaper than Option A, but with a much weaker graphics card than any of the three, and about 0.4 kg heavier.</p>
+          <div class="go"><a class="btn quiet" href="https://www.pcrenewed.co.uk/product/lenovo-thinkpad-p15v-gen-3-core-i7-12800h-16gb-ram-256gb-ssd-nvidia-quadro-t1200-windows-11-pro-gaming-laptop/" target="_blank" rel="noopener">View listing</a></div>
+        </div>
+      </div>
+
+      <div class="note" style="margin-top:28px;max-width:860px">
+        <span class="lbl">Where we looked</span>
+        <p>We searched CeX, eBay, Amazon, Cybist, Tier1, GreenGreenStore, pcrenewed, Laptop Outlet, Laptops Direct, Refurbed, Ebuyer, musicMagpie, Laptop Spares Shop and the Dell, Lenovo and HP outlets. Nothing at around £700 met every requirement (under 2 kg, a pro graphics card, a UK keyboard and at least a year's warranty).</p>
+        <p>Back Market, Bargain Hardware, Morgan, Currys, Argos and OnBuy block automated searches, so we couldn't check them. They may have something; it's worth a look yourself.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">What the words mean</div>
+        <h2>The jargon, in plain English</h2>
+        <p>You'll see these terms on every laptop listing. Here's what each one does for you.</p>
+      </div>
+      <div class="terms">
+        <div class="term"><span class="aka">GPU</span><h3>Graphics card</h3><p>Draws everything you see on screen. A stronger one keeps 3D models smooth and makes <strong>renders much faster</strong>. Its own memory (4GB on B, 6GB on A by HP's spec, 8GB on C) helps with big, detailed scenes. This is the biggest difference between the three.</p></div>
+        <div class="term"><span class="aka">CPU</span><h3>Processor</h3><p>The laptop's brain. It does most of the work when you model in SolidWorks. All three have fast Intel Core i9 processors; C's is two generations newer.</p></div>
+        <div class="term"><span class="aka">RAM</span><h3>Memory</h3><p>Lets you keep lots of things open at once, like SolidWorks, Photoshop and a browser. <strong>32GB</strong> on A and B, which is plenty. C has 16GB, which is fine to start, and it uses memory slots rather than soldered chips, so it can be upgraded later.</p></div>
+        <div class="term"><span class="aka">SSD</span><h3>Storage</h3><p>Where your files and software live. Design files and renders add up, so more is better. 1TB on A is roomy; 2TB on B and C is more than you'll need.</p></div>
+        <div class="term"><span class="aka">Rendering</span><h3>Making a render</h3><p>Turning your 3D model into a realistic, photo-like image with materials and lighting. Used for presentation boards, crits and your portfolio. KeyShot and SolidWorks Visualize do this.</p></div>
+        <div class="term"><span class="aka">Certified</span><h3>Pro graphics card</h3><p>All three have NVIDIA pro graphics cards that SolidWorks has tested and approved. That means fewer glitches than a gaming laptop, and the realistic preview mode, RealView, works properly.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap duo">
+      <div>
+        <div class="sec-head">
+          <div class="eyebrow">Carrying it around</div>
+          <h2>Weight in your bag</h2>
+          <p>All three are about 1.8 kg, more than a kilo lighter than the P15 Gen 2. The dashed line is the 2 kg limit we set.</p>
+        </div>
+        <div class="scale">
+          <div class="bag"><div class="lbl">A · ZBook Studio G8<span>1.79 kg</span></div>
+            <div class="bar" role="img" aria-label="Option A: 1.79 kg"><i class="a" style="width:59.67%"></i><span class="limit"></span></div></div>
+          <div class="bag"><div class="lbl">B · ZBook Studio G8<span>1.79 kg</span></div>
+            <div class="bar" role="img" aria-label="Option B: 1.79 kg"><i style="width:59.67%"></i><span class="limit"></span></div></div>
+          <div class="bag"><div class="lbl">C · ThinkPad P1 Gen 6<span>about 1.86 kg</span></div>
+            <div class="bar" role="img" aria-label="Option C: about 1.86 kg"><i class="c" style="width:62%"></i><span class="limit"></span></div></div>
+          <div class="bag ghost"><div class="lbl">P15v Gen 3 (first guide)<span>about 2.2 kg</span></div>
+            <div class="bar" role="img" aria-label="P15v Gen 3: about 2.2 kg"><i class="r" style="width:73.33%"></i><span class="limit"></span></div></div>
+          <div class="bag ghost"><div class="lbl">P15 Gen 2 (first guide)<span>2.87 kg</span></div>
+            <div class="bar" role="img" aria-label="P15 Gen 2: 2.87 kg"><i class="r" style="width:95.67%"></i><span class="limit"></span></div></div>
+          <div class="legend"><span>Laptop only; scale runs to 3 kg</span><span class="lim">2 kg limit</span></div>
+          <p style="font-size:.88rem;color:var(--muted)">Chargers add roughly half a kilo more (approximate).</p>
+        </div>
+      </div>
+      <div class="tw">
+        <table>
+          <thead><tr><th></th><th>A</th><th>B</th><th>C</th></tr></thead>
+          <tbody>
+            <tr><td>Weight</td><td class="num">1.79 kg</td><td class="num">1.79 kg</td><td class="num">~1.86 kg</td></tr>
+            <tr><td>Thickness</td><td class="num">1.8 cm</td><td class="num">1.8 cm</td><td class="num">1.75 cm</td></tr>
+            <tr><td>Width × depth</td><td class="num">35.4 × 23.5 cm</td><td class="num">35.4 × 23.5 cm</td><td class="num">36.0 × 25.4 cm</td></tr>
+            <tr><td>Screen</td><td>15.6"</td><td>15.6" Full HD</td><td>16" 2560 × 1600</td></tr>
+            <tr><td>Bag size</td><td>15.6"</td><td>15.6"</td><td>16"</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Condition grades</div>
+        <h2>What each seller's grade means</h2>
+        <p>Refurbished laptops are graded on how they look, not how they work. Every grade should work properly. Each seller uses its own scale, so here's what each one says.</p>
+      </div>
+      <div class="grades">
+        <div class="grade"><span class="gsum">Option A · CeX</span><span class="gname">Grade B</span><p>CeX's definition: <q>Product in good condition with all essential accessories. No box required.</q> Its other grades are A (<q>Mint</q>) and C (<q>Working, poor condition</q>).</p><p>CeX doesn't describe how many marks a Grade B can have, and the photo is a stock image.</p><span class="gfor"><a href="https://uk.support.webuy.com/support/solutions/articles/80001011621-how-are-your-items-graded-" target="_blank" rel="noopener">CeX grading page</a></span></div>
+        <div class="grade"><span class="gsum">Option B · Amazon Renewed</span><span class="gname">Good</span><p>Amazon's definition: no scratches on the screen; light scratches on the body, <q>barely visible when holding the product 30 centimeters away and imperceptible to touch</q>; fully working; battery above 80% of its original capacity.</p><p>Cybist doesn't publish its own definition of "Good", so Amazon's is the one that applies.</p><span class="gfor"><a href="https://www.amazon.co.uk/gp/help/customer/display.html?nodeId=GRAS7M4E8YJCLWH7" target="_blank" rel="noopener">Amazon Renewed conditions</a></span></div>
+        <div class="grade"><span class="gsum">Option C · eBay seller</span><span class="gname">Opened, never used</span><p>The box has been opened but the laptop hasn't been used. The seller describes it as <q>Like New</q>, with battery health at 100% after 4 charge cycles.</p><p>This seller doesn't publish a separate grading page.</p><span class="gfor"><a href="https://www.ebay.co.uk/itm/267821932696" target="_blank" rel="noopener">Seller's description on the listing</a></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap duo">
+      <div>
+        <div class="sec-head">
+          <div class="eyebrow">Optional</div>
+          <h2>If you want to be sure, ask Loughborough</h2>
+          <p>You don't need to ask; any of the three will run SolidWorks well. But if you'd like to check whether students render on their own laptops or on the university's computers, your tutor, the design technicians or students in the year above will know.</p>
+        </div>
+        <div class="ask">
+          <span class="eyebrow">Optional: ask your tutor, a technician or an older student</span>
+          <blockquote>"What laptop spec would you recommend for Industrial Design, and do most people render on their own laptops or on the studio computers?"</blockquote>
+          <p>If they render on their own laptops, go for A or C. If heavy rendering happens at uni, B's slower graphics card matters less.</p>
+        </div>
+      </div>
+      <div>
+        <div class="sec-head">
+          <div class="eyebrow">When you buy</div>
+          <h2>Checklist</h2>
+        </div>
+        <ol class="checks">
+          <li><span class="n">01</span><div><b>Check the spec yourself before you buy</b><p>Listings can change, and titles don't always match the details. On the listing, check:</p>
+            <ul class="spec-list">
+              <li><strong>Memory (RAM):</strong> 32GB on A and B, 16GB on C</li>
+              <li><strong>Storage (SSD):</strong> 1TB on A, 2TB on B and C</li>
+              <li><strong>Graphics:</strong> RTX A3000 on A, RTX A2000 on B, RTX 2000 Ada on C. Not a T1200 or a GeForce card.</li>
+              <li><strong>Grade:</strong> see the grades section above</li>
+              <li><strong>Windows:</strong> Windows 11 Pro</li>
+              <li><strong>Keyboard:</strong> UK layout. B and C say so. CeX doesn't say for A. A UK keyboard has a £ sign on the 3 key and a tall, L-shaped Enter key. If A arrives with a different layout, you can return it within 14 days.</li>
+            </ul>
+            <p>When we checked on 1 November 2026: A was £822.95 including delivery, B was £1,045 and C was £1,299, both with free delivery.</p></div></li>
+          <li><span class="n">02</span><div><b>Check the basket total</b><p>Make sure it matches the price above before paying.</p></div></li>
+          <li class="key"><span class="n">03</span><div><b>Don't buy SolidWorks</b><p>It should come free from the university. Check with the course before paying for a licence or a laptop bundle that includes one.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="eyebrow">About this guide</div>
+    <p>Prices and stock are from the CeX, Amazon, eBay and pcrenewed listings, checked on 1 November 2026, and may change. Refurbished stock is often a single laptop. Weights and sizes come from HP's and Lenovo's spec sheets; charger weights are approximate. Rendering speed comparisons are estimates based on the graphics cards, not tests of these exact laptops. The first version of this guide compared two ThinkPads from pcrenewed, checked on 31 October 2026.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, lbl=document.getElementById("theme-lbl");
+  function current(){
+    var t=root.getAttribute("data-theme");
+    if(t) return t;
+    return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  function paint(){ lbl.textContent=current()==="dark"?"Light":"Dark"; }
+  try{ var saved=localStorage.getItem("guide-theme"); if(saved) root.setAttribute("data-theme",saved); }catch(e){}
+  paint();
+  document.getElementById("theme").addEventListener("click",function(){
+    var next=current()==="dark"?"light":"dark";
+    root.setAttribute("data-theme",next);
+    try{ localStorage.setItem("guide-theme",next); }catch(e){}
+    paint();
+  });
+})();
+</script>
+
+</body></html>
